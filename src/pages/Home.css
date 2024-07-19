@@ -44,10 +44,11 @@ h2 {
 }
 
 #result {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .restart {
+  margin-top: 20px;
   font-size: 15px;
   display: flex;
   align-items: center;
@@ -70,8 +71,8 @@ span {
 
 table {
   font-size: 15px;
-  border: 2px solid #fae4c8;
-  width: 400px;
+  /* border: 2px solid #fae4c8; */
+  width: 450px;
   border-collapse: separate;
   border-radius: 10px;
   overflow: hidden;
@@ -80,12 +81,14 @@ table {
 
 th,
 td {
-  padding: 5px;
+  padding: 10px;
   text-align: center;
+  border: 2px solid #fae4c8;
   /* border: 2px solid #fae4c8; */
 }
 th {
   color: 2px solid #fae4c8;
+  border-bottom: 2px solid #fae4c8;
 }
 td {
 }
@@ -101,4 +104,8 @@ tr:last-child td:first-child {
 }
 tr:last-child td:last-child {
   border-bottom-right-radius: 10px;
+}
+
+.purple {
+  color: #703ffa;
 }
