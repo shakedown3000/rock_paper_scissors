@@ -19,11 +19,11 @@ const Home = () => {
   function checkWinner() {
     console.log("Check Wimmer Function activated");
     if (yourScore > cpuScore) {
-      setAllRoundsWinner("You!");
+      setAllRoundsWinner("You! Next round?");
     } else if (yourScore < cpuScore) {
-      setAllRoundsWinner("The computer");
+      setAllRoundsWinner("The computer! Next round?");
     } else {
-      setAllRoundsWinner("It is a tie!");
+      setAllRoundsWinner("It is a tie! Next round?");
     }
   }
 
