@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Ruska";
+  src: url("/fonts/RuskaDisplay-Regular.otf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Ruska";
+  color: #fae4c8;
+}

@@ -1,0 +1,104 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.push {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fae4c8;
+  border-radius: 30px;
+  width: 160px;
+  height: 160px;
+}
+
+.push:hover {
+  color: #703ffa;
+  border: 2px solid #703ffa;
+  cursor: pointer;
+}
+
+.rockpaperscissors {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.scissors {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#result {
+  margin-bottom: 50px;
+}
+
+.restart {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fae4c8;
+  border-radius: 30px;
+  width: 200px;
+  height: 40px;
+}
+
+.restart:hover {
+  color: #703ffa;
+  border: 2px solid #703ffa;
+  cursor: pointer;
+}
+
+span {
+  color: #703ffa;
+}
+
+table {
+  font-size: 15px;
+  border: 2px solid #fae4c8;
+  width: 400px;
+  border-collapse: separate;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: center;
+  /* border: 2px solid #fae4c8; */
+}
+th {
+  color: 2px solid #fae4c8;
+}
+td {
+}
+
+tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
