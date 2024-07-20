@@ -1,5 +1,5 @@
 import "./Home.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
   const rockpaperscissorsArray: string[] = ["Rock", "Paper", "Scissors"];
@@ -8,8 +8,17 @@ const Home = () => {
   const [roundsWinner, setRoundsWinner] = useState<string>();
   const [yourScore, setYourScore] = useState<number>(0);
   const [cpuScore, setCpuScore] = useState<number>(0);
-  const [numberOfRounds, setNumberOfRounds] = useState<number>(1);
+  const [numberOfRounds, setNumberOfRounds] = useState<number>(0);
   const [allRoundsWinner, setAllRoundsWinner] = useState<string>("");
+
+  useEffect(() => {
+    if (numberOfRounds === 3) {
+      checkWinner();
+      setTimeout(() => {
+        setNumberOfRounds(0);
+      }, 1000);
+    }
+  }, [numberOfRounds]);
 
   function cpuPlays(array: string[]): string {
     const randomIndex = Math.floor(Math.random() * array.length);
@@ -17,7 +26,7 @@ const Home = () => {
   }
 
   function checkWinner() {
-    console.log("Check Wimmer Function activated");
+    console.log("Check Winner Function activated");
     if (yourScore > cpuScore) {
       setAllRoundsWinner("You! Next round?");
     } else if (yourScore < cpuScore) {
@@ -32,12 +41,15 @@ const Home = () => {
     setCpuScore(0);
     setYourResult("");
     setYourScore(0);
-    setNumberOfRounds(1);
+    setNumberOfRounds(0);
     setRoundsWinner("");
+    setAllRoundsWinner("");
   }
 
   const playGame = (yourChoice: string) => {
-    setAllRoundsWinner("");
+    if (numberOfRounds === 3) {
+      return;
+    }
     console.log(`You chose: ${yourChoice}`);
     const computersChoice: string = cpuPlays(rockpaperscissorsArray);
     setYourResult(yourChoice);
@@ -67,11 +79,6 @@ const Home = () => {
     }
 
     setNumberOfRounds(numberOfRounds + 1);
-
-    if (numberOfRounds === 3) {
-      checkWinner();
-      restartGame();
-    }
   };
 
   return (
