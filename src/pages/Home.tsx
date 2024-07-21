@@ -80,6 +80,8 @@ const Home = () => {
     setNumberOfRounds(numberOfRounds + 1);
   };
 
+  const isGameOver = cpuScore === 3 || yourScore === 3;
+
   return (
     <>
       <section className="game">
@@ -98,17 +100,26 @@ const Home = () => {
           <span> {roundsWinner}</span>
         </p>
         <div className="rockpaperscissors">
-          <div onClick={() => playGame("Rock")} className="rock push">
-            Rock
+          <div
+            onClick={() => !isGameOver && playGame("Rock")}
+            className={`rock push ${isGameOver ? "disabled" : ""}`}
+          >
+            <p>Rock</p>
           </div>
-          <div onClick={() => playGame("Paper")} className="paper push">
-            Paper
+          <div
+            onClick={() => !isGameOver && playGame("Paper")}
+            className={`paper push ${isGameOver ? "disabled" : ""}`}
+          >
+            <p>Paper</p>
           </div>
-          <div onClick={() => playGame("Scissors")} className="scissors push">
-            Scissors
+          <div
+            onClick={() => !isGameOver && playGame("Scissors")}
+            className={`scissors push ${isGameOver ? "disabled" : ""}`}
+          >
+            <p>Scissors</p>
           </div>
         </div>
-        <div>
+        <div className="scoreTable">
           <table>
             <thead>
               <tr>

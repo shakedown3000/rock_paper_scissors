@@ -1,5 +1,5 @@
 .game {
-  padding-top: 50px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,19 +8,22 @@
 }
 
 .push {
+  line-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto 0;
   border: 2px solid #fae4c8;
   border-radius: 30px;
-  width: 160px;
+  width: 200px;
   height: 70px;
-  line-height: 0;
 }
 
-.push:hover {
-  color: #703ffa;
-  border: 2px solid #703ffa;
+.push:hover,
+.restart:hover {
+  background-color: #703ffa;
+  border: 2px solid white;
+  color: white;
   cursor: pointer;
 }
 
@@ -29,9 +32,6 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-}
-
-.scissors {
   margin-bottom: 30px;
 }
 
@@ -59,12 +59,7 @@ h2 {
   border-radius: 30px;
   width: 200px;
   height: 40px;
-}
-
-.restart:hover {
-  color: #703ffa;
-  border: 2px solid #703ffa;
-  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
 span {
@@ -115,4 +110,9 @@ tr:last-child td:last-child {
 .disabled {
   pointer-events: none;
   opacity: 0.5; /* Optional: Make the button look disabled */
+}
+
+.scoreTable {
+  display: flex;
+  flex-direction: column;
 }
