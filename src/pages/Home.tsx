@@ -12,13 +12,10 @@ const Home = () => {
   const [allRoundsWinner, setAllRoundsWinner] = useState<string>("");
 
   useEffect(() => {
-    if (numberOfRounds === 3) {
+    if (cpuScore === 3 || yourScore === 3) {
       checkWinner();
-      setTimeout(() => {
-        setNumberOfRounds(0);
-      }, 1000);
     }
-  }, [numberOfRounds]);
+  }, [cpuScore, yourScore]);
 
   function cpuPlays(array: string[]): string {
     const randomIndex = Math.floor(Math.random() * array.length);
@@ -47,7 +44,8 @@ const Home = () => {
   }
 
   const playGame = (yourChoice: string) => {
-    if (numberOfRounds === 3) {
+    if (cpuScore === 3 || yourScore === 3) {
+      alert("We have a winner");
       return;
     }
     console.log(`You chose: ${yourChoice}`);
@@ -56,6 +54,7 @@ const Home = () => {
     setCpuResult(computersChoice);
     console.log(`The computer chose: ${computersChoice}`);
     const combinedChoices = `${yourChoice}-${computersChoice}`;
+    // Auswerten, wer gewonnen hat:
     switch (combinedChoices) {
       // I win (first value wins)
       case "Rock-Scissors":
@@ -85,12 +84,12 @@ const Home = () => {
     <>
       <section className="game">
         <h1>Rock, Paper, Scissors</h1>
-        <h2>Choose your weapon:</h2>
+        <h2>Whoever gets 3 points first wins. Choose your weapon:</h2>
         <p id="you_chose" className="answer">
           You chose: <span> {yourResult}</span>
         </p>
         <p id="cpu_chose" className="answer">
-          The CPU chose: <span> {cpuResult}</span>
+          The Computer chose: <span> {cpuResult}</span>
           <br></br>
           <br></br>
         </p>
@@ -122,7 +121,7 @@ const Home = () => {
               <tr>
                 <td>{yourScore}</td>
                 <td>{cpuScore}</td>
-                <td>{numberOfRounds}/3</td>
+                <td>{numberOfRounds}</td>
               </tr>
             </tbody>
           </table>

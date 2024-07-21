@@ -14,7 +14,8 @@
   border: 2px solid #fae4c8;
   border-radius: 30px;
   width: 160px;
-  height: 160px;
+  height: 70px;
+  line-height: 0;
 }
 
 .push:hover {
@@ -109,4 +110,9 @@ tr:last-child td:last-child {
 
 .purple {
   color: #703ffa;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5; /* Optional: Make the button look disabled */
 }
